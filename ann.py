@@ -3,7 +3,7 @@
 import pandas as pd
 
 # %%
-dataset = pd.read_csv('50_Startups.csv')
+dataset = pd.read_csv('/python/50_Startups.csv')
 
 # %%
 dataset.info()
