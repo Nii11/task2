@@ -17,6 +17,12 @@ from keras.layers.normalization import BatchNormalization
 from keras.models import Model
 from tensorflow import keras
 import pandas as pd
+from keras.models import Sequential
+from sklearn.model_selection import train_test_split
+from keras.optimizers import Adam
+
+
+
 
 dataset = pd.read_csv('/python/50_Startups.csv')
 
