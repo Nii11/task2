@@ -93,7 +93,7 @@ print(y_pred)
 # %%
 print(y_test)
 
-# %%
+# %
 accuracy=((y_test-y_pred)/y_test)*100
 
 print(accuracy)
