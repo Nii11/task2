@@ -93,5 +93,7 @@ print(y_pred)
 # %%
 print(y_test)
 
+model.save("/python/ann_model")
+
 # %
 exit()
