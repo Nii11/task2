@@ -3,7 +3,7 @@ def addTopModel(bottom_model, D=4):
     """creates the top or head of the model that will be 
     placed ontop of the bottom layers"""
     top_model = bottom_model.output
-#    top_model = Flatten(name = "flatten")(top_model)
+#   # top_model = Flatten(name = "flatten")(top_model)
     top_model = Dense(D, activation = "relu")(top_model)
     top_model = Dropout(0.3)(top_model)
     top_model = Dense(1, activation = "relu")(top_model)
