@@ -87,11 +87,15 @@ model.fit(X_train,y_train,epochs=30)
 y_pred = model.predict(X_test)
 
 # %%
-y_pred
+print(y_pred)
 
 
 # %%
-y_test
-
+print(y_test)
 
 # %%
+accuracy=((y_test-y_pred)/y_test)*100
+
+print(accuracy)
+
+exit()
