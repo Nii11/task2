@@ -7,7 +7,7 @@ from tensorflow import keras
 from keras.models import Model
 
 # %%
-dataset = pd.read_csv('/python/50_Startups.csv')
+dataset = pd.read_csv('50_Startups.csv')
 
 # %%
 dataset.info()
@@ -90,25 +90,32 @@ model.summary()
 model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),metrics=['accuracy'])
 
 # %%
-model.fit(X_train,y_train,epochs=30)
+info = model.fit(X_train,y_train,epochs=30)
+
+# %%
+info.history['accuracy']
+
+# %%
+import numpy as np
+
+# %%
+np.mean(info.history['accuracy'])
 
 # %%
 y_pred = model.predict(X_test)
 
 # %%
 y_pred
-
+len(y_pred)
 
 # %%
 y_test
 
-
 # %%
-model.save('/python/ann_model1.h5')
-
-# %%
-for layer in model:
-    layers.trainable
 
 
 # %%
+
+
+# %%
+model.save('ann_model1.h5')

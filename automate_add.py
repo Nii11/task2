@@ -23,7 +23,7 @@ from sklearn.model_selection import train_test_split
 from keras.layers import Dense
 from keras.optimizers import Adam
 
-dataset = pd.read_csv('/python/50_Startups.csv')
+dataset = pd.read_csv('50_Startups.csv')
 
 dataset.info()
 
@@ -54,7 +54,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random
 
 
 
-model = tf.keras.models.load_model('/python/ann_model1.h5')
+model = tf.keras.models.load_model('ann_model1.h5')
 
 FC_Head = addTopModel(model)
 
@@ -76,7 +76,7 @@ print(y_pred)
 print(y_test)
 
 
-model.save("/python/ann_model.h5")
+model.save("ann_model.h5")
 
 
 
