@@ -1,9 +1,13 @@
-
-# %
+# %%
 import pandas as pd
+import tensorflow as tf
+from tensorflow import keras
 
 # %%
-dataset = pd.read_csv('/python/50_Startups.csv')
+from keras.models import Model
+
+# %%
+dataset = pd.read_csv('50_Startups.csv')
 
 # %%
 dataset.info()
@@ -47,6 +51,7 @@ X
 # %%
 from keras.models import Sequential
 
+
 # %%
 from sklearn.model_selection import train_test_split
 
@@ -63,22 +68,26 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random
 X_train.shape
 
 # %%
-model = Sequential()
+model = tf.keras.models.Sequential()
+
 
 # %%
-model.add(Dense(units=2 , input_shape=(5,) , activation='relu' ))
+tf.keras.Model()
 
 # %%
-model.add(Dense(units=2 , input_shape=(5,) , activation='relu' ))
+model.add(tf.keras.layers.Dense(units=2 , input_shape=(5,) , activation='relu' ))
 
 # %%
-model.add(Dense(units=1 , input_shape=(5,) , activation='relu' ))
+model.add(tf.keras.layers.Dense(units=1 , input_shape=(5,) , activation='relu' ))
+
+# %%
+model.add(tf.keras.layers.Dense(units=1 , input_shape=(5,) , activation='relu' ))
 
 # %%
 model.summary()
 
 # %%
-model.compile(loss='mean_squared_error', optimizer=Adam(learning_rate=0.001),metrics=['accuracy'])
+model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),metrics=['accuracy'])
 
 # %%
 model.fit(X_train,y_train,epochs=30)
@@ -87,13 +96,19 @@ model.fit(X_train,y_train,epochs=30)
 y_pred = model.predict(X_test)
 
 # %%
-print(y_pred)
+y_pred
 
 
 # %%
-print(y_test)
+y_test
 
-model.save("/python/ann_model")
 
-# %
-exit()
+# %%
+model.save('ann_model1.h5')
+
+# %%
+for layer in model:
+    layers.trainable
+
+
+# %%
