@@ -7,7 +7,7 @@ from tensorflow import keras
 from keras.models import Model
 
 # %%
-dataset = pd.read_csv('50_Startups.csv')
+dataset = pd.read_csv('/python/50_Startups.csv')
 
 # %%
 dataset.info()
@@ -118,4 +118,4 @@ y_test
 
 
 # %%
-model.save('ann_model1.h5')
+model.save('/python/ann_model1.h5')
