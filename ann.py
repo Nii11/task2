@@ -75,13 +75,13 @@ model = tf.keras.models.Sequential()
 tf.keras.Model()
 
 # %%
-model.add(tf.keras.layers.Dense(units=2 , input_shape=(5,) , activation='relu' ))
+model.add(tf.keras.layers.Dense(units=12 , input_shape=(5,) , activation='relu' , name='init1' ))
 
 # %%
-model.add(tf.keras.layers.Dense(units=1 , input_shape=(5,) , activation='relu' ))
+model.add(tf.keras.layers.Dense(units=11 , input_shape=(5,) , activation='relu' , name='init2' ))
 
 # %%
-model.add(tf.keras.layers.Dense(units=1 , input_shape=(5,) , activation='relu' ))
+model.add(tf.keras.layers.Dense(units=1 , input_shape=(5,) , activation='relu' , name='init3' ))
 
 # %%
 model.summary()
@@ -99,8 +99,7 @@ info.history['accuracy']
 import numpy as np
 
 # %%
-np.mean(info.history['accuracy'])
-
+accu=np.mean(info.history['accuracy'])
 # %%
 y_pred = model.predict(X_test)
 
@@ -112,7 +111,9 @@ len(y_pred)
 y_test
 
 # %%
-
+op_file = open("/python/op_file.txt", "w+")
+l=["export accu="accu "/n" , "export execu = First_Op"]
+op_file.writelines(l)
 
 # %%
 
