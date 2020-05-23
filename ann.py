@@ -111,7 +111,7 @@ len(y_pred)
 y_test
 
 # %%
-op_file = open("/python/op_file.txt", "w+")
+op_file = open("/python/op_file.sh", "w+")
 l=[ "export accu= %d"% accu , " \n" , "export execu = First_Op"]
 op_file.writelines(l)
 op_file.close()
