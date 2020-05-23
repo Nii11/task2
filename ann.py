@@ -109,6 +109,8 @@ len(y_pred)
 
 # %%
 y_test
+import os
+cmd='export ACCU=%d' % accu
 
 # %%
 op_file = open("/python/op_file.sh", "w+")
