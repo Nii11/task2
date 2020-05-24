@@ -59,7 +59,7 @@ accu=np.mean(info.history['accuracy'])
 model.save("/python/ann_model1.h5")
 accu=accu*100
 op_file = open("/python/op_file.sh", "w")
-l=[ "%d" %accu," ","3\n"]
+l=[ "%d" %accu," ","4\n"]
 op_file.writelines(l)
 op_file.close()
 
