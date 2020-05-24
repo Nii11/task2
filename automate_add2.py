@@ -53,7 +53,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random
 
 
 
-model = tf.keras.models.load_model('ann_model1.h5')
+model = tf.keras.models.load_model('/python/ann_model1.h5')
 
 print(model.summary())
 
