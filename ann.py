@@ -113,6 +113,7 @@ y_test
 #cmd='export ACCU=%d' % accu
 
 # %%
+accu=accu*100
 op_file = open("/python/op_file.sh", "w+")
 l=[ "%d" %accu," ""1\n"]
 op_file.writelines(l)
