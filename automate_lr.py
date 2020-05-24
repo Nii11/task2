@@ -12,7 +12,7 @@ from sklearn.model_selection import train_test_split
 from keras.layers import Dense
 from keras.optimizers import Adam
 
-dataset = pd.read_csv('50_Startups.csv')
+dataset = pd.read_csv('/python/50_Startups.csv')
 
 dataset.info()
 
@@ -56,7 +56,7 @@ print(y_pred)
 print(y_test)
 
 
-model.save("ann_model1.h5")
+model.save("/python/ann_model1.h5")
 accu=accu*100
 op_file = open("/python/op_file.sh", "w")
 l=[ "%d" %accu," ","3\n"]

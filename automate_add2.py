@@ -24,7 +24,7 @@ from keras.layers import Dense
 from keras.optimizers import Adam
 import numpy as np
 
-dataset = pd.read_csv('50_Startups.csv')
+dataset = pd.read_csv('/python/50_Startups.csv')
 
 dataset.info()
 
@@ -77,7 +77,7 @@ print(y_pred)
 print(y_test)
 
 
-model.save("ann_model1.h5")
+model.save("/python/ann_model1.h5")
 accu=np.mean(info.history['accuracy'])
 accu=accu*100
 op_file = open("/python/op_file.sh", "w+")
