@@ -58,15 +58,15 @@ model = tf.keras.models.load_model('/python/ann_model1.h5')
 
 FC_Head = addTopModel(model)
 
-modelnew = tf.keras.models.Model (inputs=model.input, outputs=FC_Head)
+model = tf.keras.models.Model (inputs=model.input, outputs=FC_Head)
 
 print(modelnew.summary())
 
-modelnew.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),metrics=['accuracy'])
+model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),metrics=['accuracy'])
 
-info=modelnew.fit(X_train,y_train,epochs=30)
+info=model.fit(X_train,y_train,epochs=30)
 
-y_pred = modelnew.predict(X_test)
+y_pred = model.predict(X_test)
 
 # %%
 print(y_pred)
@@ -76,7 +76,7 @@ print(y_pred)
 print(y_test)
 
 
-modelnew.save("/python/ann_mode1.h5")
+model.save("/python/ann_mode1.h5")
 
 accu=np.mean(info.history['accuracy'])
 
