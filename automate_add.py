@@ -60,7 +60,7 @@ FC_Head = addTopModel(model)
 
 model = tf.keras.models.Model (inputs=model.input, outputs=FC_Head)
 
-print(modelnew.summary())
+print(model.summary())
 
 model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),metrics=['accuracy'])
 
@@ -81,7 +81,7 @@ model.save("/python/ann_mode1.h5")
 accu=np.mean(info.history['accuracy'])
 
 accu = accu * 100
-op_file = open("/python/op_file.sh", "w+")
+op_fie = open("/python/op_file.sh", "w+")
 l=[ "%d" %accu," ","2\n"]
 op_file.writelines(l)
 op_file.close()
