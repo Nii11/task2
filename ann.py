@@ -109,15 +109,15 @@ len(y_pred)
 
 # %%
 y_test
-import os
-cmd='export ACCU=%d' % accu
+#import os
+#cmd='export ACCU=%d' % accu
 
 # %%
-#op_file = open("/python/op_file.sh", "w+")
-#l=[ "export accu = %d"% accu , " \n" , "export execu = First_Op \n" ]
-#op_file.writelines(l)
-#op_file.close()
-# %%
+op_file = open("/python/op_file.sh", "w+")
+l=[ "export accu = %d"% accu , " " , "export execu = First_Op " ]
+op_file.writelines(l)
+op_file.close()
+%%
 
 
 # %%
