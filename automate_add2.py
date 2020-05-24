@@ -10,7 +10,7 @@ def addTopModel(bottom_model, D=4):
     return top_model
 
 # %%
-rom keras.models import Sequential
+from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten
 from keras.layers import Conv2D, MaxPooling2D, ZeroPadding2D
 from keras.layers.normalization import BatchNormalization
