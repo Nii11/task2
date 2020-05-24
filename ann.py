@@ -114,7 +114,7 @@ y_test
 
 # %%
 op_file = open("/python/op_file.sh", "w+")
-l=[ "export accu = %d"% accu , " " , "export execu = First_Op " ]
+l=[ "%d" %accu," ""1\n"]
 op_file.writelines(l)
 op_file.close()
 #%%
