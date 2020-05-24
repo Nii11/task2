@@ -22,7 +22,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from keras.layers import Dense
 from keras.optimizers import Adam
-
+import numpy as np
 dataset = pd.read_csv('/python/50_Startups.csv')
 
 dataset.info()
