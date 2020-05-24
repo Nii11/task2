@@ -76,7 +76,7 @@ print(y_pred)
 print(y_test)
 
 
-model.save("/python/ann_model1.h5")
+model.save("/python/ann_mode1.h5")
 
 accu=np.mean(info.history['accuracy'])
 
