@@ -58,8 +58,8 @@ print(y_test)
 
 model.save("ann_model1.h5")
 accu=accu*100
-op_file = open("/python/op_file.sh", "w+")
-l=[ "%d" %accu," ""3\n"]
+op_file = open("/python/op_file.sh", "w")
+l=[ "%d" %accu," ","3\n"]
 op_file.writelines(l)
 op_file.close()
 
