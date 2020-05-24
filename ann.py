@@ -117,7 +117,7 @@ op_file = open("/python/op_file.sh", "w+")
 l=[ "export accu = %d"% accu , " " , "export execu = First_Op " ]
 op_file.writelines(l)
 op_file.close()
-%%
+#%%
 
 
 # %%
