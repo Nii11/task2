@@ -121,9 +121,9 @@ op_file.close()
 #%%
 
 print ('This got predicted /n')
-print(y_pred[])
+print(y_pred)
 print('This is real value /n')
-print(y_test[])
+print(y_test)
 
 # %%
 model.save('/python/ann_model1.h5')
