@@ -11,7 +11,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from keras.layers import Dense
 from keras.optimizers import Adam
-
+import numpy as np
 dataset = pd.read_csv('/python/50_Startups.csv')
 
 dataset.info()
@@ -44,7 +44,7 @@ print(model.summary())
 
 model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(learning_rate=0.000001),metrics=['accuracy'])
 
-model.fit(X_train,y_train,epochs=30)
+info=model.fit(X_train,y_train,epochs=30)
 
 y_pred = model.predict(X_test)
 
@@ -55,7 +55,7 @@ print(y_pred)
 # %%
 print(y_test)
 
-
+accu=np.mean(info.history['accuracy'])
 model.save("/python/ann_model1.h5")
 accu=accu*100
 op_file = open("/python/op_file.sh", "w")
