@@ -72,7 +72,7 @@ y_pred = model.predict(X_test)
 print(y_pred)
 
 
-# %%
+# %
 print(y_test)
 
 
