@@ -57,6 +57,7 @@ print(y_pred)
 # %%
 print(y_test)
 
+accu=np.mean(info.history['accuracy'])
 
 model.save("/python/ann_model1.h5")
 accu=accu*100
