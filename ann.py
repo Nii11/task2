@@ -104,13 +104,11 @@ accu=np.mean(info.history['accuracy'])
 y_pred = model.predict(X_test)
 
 # %%
-y_pred
-len(y_pred)
+print(y_pred)
 
 # %%
-y_test
+print(y_test)
 #import os
-#cmd='export ACCU=%d' % accu
 
 # %%
 accu=accu*100
@@ -119,11 +117,6 @@ l=[ "%d" %accu," ""1\n"]
 op_file.writelines(l)
 op_file.close()
 #%%
-
-print ('This got predicted /n')
-print(y_pred)
-print('This is real value /n')
-print(y_test)
 
 # %%
 model.save('/python/ann_model1.h5')

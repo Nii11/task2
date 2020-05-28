@@ -4,7 +4,7 @@ def addTopModel(bottom_model, D=3):
     placed ontop of the bottom layers"""
     top_model = bottom_model.output
     #top_model = Flatten(name = "flatten")(top_model)
-    top_model = tf.keras.layers.Dense(D, activation = "relu",name='executer1a')(top_model)
+    #top_model = tf.keras.layers.Dense(D, activation = "relu",name='executer1a')(top_model)
     #top_model = Dropout(0.3)(top_model)
     top_model = tf.keras.layers.Dense(1, activation = "relu",name='executer2a')(top_model)
     return top_model
@@ -54,8 +54,6 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random
 
 
 model = tf.keras.models.load_model('/python/ann_model1.h5')
-
-model.pop()
 
 model.summary()
 
