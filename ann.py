@@ -75,13 +75,13 @@ model = tf.keras.models.Sequential()
 tf.keras.Model()
 
 # %%
-model.add(tf.keras.layers.Dense(units=12 , input_shape=(5,) , activation='relu' , name='init1' ))
+model.add(tf.keras.layers.Dense(units=10, input_shape=(5,) , activation='relu' , name='init1' ))
 
 # %%
-model.add(tf.keras.layers.Dense(units=11 , input_shape=(5,) , activation='relu' , name='init2' ))
+model.add(tf.keras.layers.Dense(units=10 , input_shape=(5,) , activation='relu' , name='init2' ))
 
 # %%
-model.add(tf.keras.layers.Dense(units=1 , input_shape=(5,) , activation='relu' , name='init3' ))
+model.add(tf.keras.layers.Dense(units=7 , input_shape=(5,) , activation='relu' , name='init3' ))
 
 # %%
 model.summary()

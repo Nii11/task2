@@ -42,7 +42,7 @@ model = tf.keras.models.load_model('/python/ann_model1.h5')
 
 print(model.summary())
 
-model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.SGD(learning_rate=0.000001),metrics=['accuracy'])
+model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(learning_rate=0.000001),metrics=['accuracy'])
 
 info=model.fit(X_train,y_train,epochs=30)
 
