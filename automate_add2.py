@@ -1,5 +1,5 @@
 # %%
-def addTopModel(bottom_model, D=3)
+def addTopModel(bottom_model, D=3):
     """creates the top or head of the model that will be 
     placed ontop of the bottom layers"""
     top_model = bottom_model.output
