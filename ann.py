@@ -87,7 +87,7 @@ model.add(tf.keras.layers.Dense(units=1 , input_shape=(5,) , activation='relu' ,
 model.summary()
 
 # %%
-model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),metrics=['accuracy'])
+model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),metrics=['mse'])
 
 # %%
 info = model.fit(X_train,y_train,epochs=30)
