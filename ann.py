@@ -93,13 +93,13 @@ model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(lear
 info = model.fit(X_train,y_train,epochs=30)
 
 # %%
-info.history['accuracy']
+info.history['mse']
 
 # %%
 import numpy as np
 
 # %%
-accu=np.mean(info.history['accuracy'])
+accu=np.mean(info.history['mse'])
 # %%
 y_pred = model.predict(X_test)
 
