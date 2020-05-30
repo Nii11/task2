@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo docker run 	--rm -v /task2/task2:/python --name py mlpy:latest /python/ann.py > /task2/output.log
+
