@@ -116,10 +116,11 @@ accu=accu/y_test
 
 accu=accu*100
 
-#import os
+print(accu)
+
+import os
 
 # %%
-accu=accu*100
 op_file = open("/python/op_file.sh", "w+")
 l=[ "%d" %accu," ""1\n"]
 op_file.writelines(l)
