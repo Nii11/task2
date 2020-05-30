@@ -72,6 +72,7 @@ print(accu)
 
 tot_accu=np.mean(accu)
 
+print(tot_accu)
 
 model.save("/python/ann_model1.h5")
 op_file = open("/python/op_file.sh", "w+")
