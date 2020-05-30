@@ -42,26 +42,40 @@ model = tf.keras.models.load_model('/python/ann_model1.h5')
 
 print(model.summary())
 
-model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(learning_rate=0.000001),metrics=['accuracy'])
+model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(learning_rate=0.000001),metrics=['mape'])
 
 info=model.fit(X_train,y_train,epochs=30)
 
-np.mean(info.history['accuracy'])
+np.mean(info.history['accuracy'])   
 
 y_pred = model.predict(X_test)
 
 # %%
+y_pred=y_pred.reshape(10)
+
 print(y_pred)
 
 
 # %
 print(y_test)
 
-accu=np.mean(info.history['accuracy'])
+accu=y_test-y_pred
+
+accu=accu/y_test
+
+accu=accu*100
+
+accu=100-accu
+
+print('ACCURACY ARRAY')
+
+print(accu)
+
+tot_accu=np.mean(accu)
+
 
 model.save("/python/ann_model1.h5")
-accu=accu*100
 op_file = open("/python/op_file.sh", "w+")
-l=[ "%d" %accu," ","5\n"]
+l=[ "%d" %tot_accu," ","5\n"]
 op_file.writelines(l)
 op_file.close()
