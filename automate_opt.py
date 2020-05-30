@@ -46,7 +46,6 @@ model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(lear
 
 info=model.fit(X_train,y_train,epochs=30)
 
-np.mean(info.history['accuracy'])   
 
 y_pred = model.predict(X_test)
 
