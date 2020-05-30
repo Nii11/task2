@@ -94,7 +94,7 @@ tot_accu=np.mean(tot_accu)
 model.save("/python/ann_model1.h5")
 #accu=np.mean(info.history['accuracy'])
 op_file = open("/python/op_file.sh", "w+")
-l=[ "%d" %tot_accu," ","3\n"]
+l=[ "%d" %tot_accu," ""3\n"]
 op_file.writelines(l)
 op_file.close()
 
