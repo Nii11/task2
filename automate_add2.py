@@ -89,7 +89,7 @@ accu=100-accu
 
 print(accu)
 
-tot_accu=np.mean(tot_accu)
+tot_accu=np.mean(accu)
 
 model.save("/python/ann_model1.h5")
 #accu=np.mean(info.history['accuracy'])
