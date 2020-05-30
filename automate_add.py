@@ -93,6 +93,7 @@ print(accu)
 
 tot_accu=np.mean(accu)
 
+print(tot_accu)
 model.save("/python/ann_model1.h5")
 
 #accu = accu * 100
