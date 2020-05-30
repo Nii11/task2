@@ -116,13 +116,17 @@ accu=accu/y_test
 
 accu=accu*100
 
+accu=100-accu
+
 print(accu)
+
+tot_accu=np.mean(accu)
 
 import os
 
 # %%
 op_file = open("/python/op_file.sh", "w+")
-l=[ "%d" %accu," ""1\n"]
+l=[ "%d" %tot_accu," ""1\n"]
 op_file.writelines(l)
 op_file.close()
 #%%
