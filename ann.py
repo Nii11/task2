@@ -107,7 +107,7 @@ y_pred=y_pred.reshape(sop)
 # %%
 print(y_pred)
 
-# %%
+# %
 print(y_test)
 
 accu=y_test-y_pred
