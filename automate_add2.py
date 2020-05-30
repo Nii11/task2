@@ -51,8 +51,6 @@ X = pd.concat([rd,ad,ms,state] ,  axis=1)
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
 
-
-
 model = tf.keras.models.load_model('/python/ann_model1.h5')
 
 model.pop()
