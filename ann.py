@@ -84,7 +84,7 @@ model.add(tf.keras.layers.Dense(units=7, input_shape=(7,) , activation='relu' , 
 #model.add(tf.keras.layers.Dense(units=1 , input_shape=(5,) , activation='relu' , name='init3' ))
 
 
-model.add(tf.keras.layers.Dense(units=1 , activation='relu' , name='init3' ))
+model.add(tf.keras.layers.Dense(units=1 , input_shape=(7,) activation='relu' , name='init3' ))
 
 # %%
 print(model.summary())
