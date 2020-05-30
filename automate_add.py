@@ -54,6 +54,9 @@ model = tf.keras.models.load_model('/python/ann_model1.h5')
 
 model.pop()
 
+for layer in model.layers:
+    tf.keras.layers.trainable = False
+
 print(model.summary())
 
 FC_Head = addTopModel(model)
