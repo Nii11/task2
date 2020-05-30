@@ -1,0 +1,45 @@
+#!/bin/bash
+export accu=`awk '{print $1}' /task2/task2/op_file.sh`
+echo $accu
+export exeop=`awk '{print $2}' /task2/task2/op_file.sh`
+echo $exop
+echo $exeop
+while [ $accu -lt 85 ] || [ $accu -gt 100 ]
+do
+ export accu=`awk '{print $1}' /task2/task2/op_file.sh`
+ echo $accu
+ export exeop=`awk '{print $2}' /task2/task2/op_file.sh`
+ echo $exop
+ if [ $accu -lt 85 ] || [ $accu -gt 100 ]
+ then	
+  case "$exeop" in
+	1)
+     echo "****1****"
+     #!/bin/bash
+     sudo docker run --rm -v /task2/task2:/python --name py mlpy:latest /python/automate_add.py >> /task2/output.log
+	 ;;
+    2)
+     echo "****2****"
+     #!/bin/bash
+	 sudo docker run --rm -v /task2/task2:/python --name py mlpy:latest /python/automate_add2.py >> /task2/output.log
+     ;;
+    3)
+      echo "****3****"
+      #!/bin/bash
+	  sudo docker run --rm -v /task2/task2:/python --name py mlpy:latest /python/automate_lr.py >> /task2/output.log
+     ;;
+    4)
+      echo "****4****"
+      #!/bin/bash
+	  sudo docker run --rm -v /task2/task2:/python --name py mlpy:latest /python/automate_opt.py >> /task2/output.log
+     ;;
+    5)
+      echo "****5****"
+      #!/bin/bash
+   	  echo "Rebuild  model"
+      break
+      ;;
+   esac'
+   fi
+done
+echo 'This is good model'
