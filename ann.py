@@ -122,6 +122,8 @@ print(accu)
 
 tot_accu=np.mean(accu)
 
+print(tot_accu)
+
 import os
 
 # %%
