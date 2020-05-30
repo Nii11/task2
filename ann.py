@@ -46,7 +46,7 @@ ms=dataset['Marketing Spend']
 X = pd.concat([rd,ad,ms,state] ,  axis=1)
 
 # %%
-X
+#X
 
 # %%
 from keras.models import Sequential
@@ -84,30 +84,38 @@ model.add(tf.keras.layers.Dense(units=10 , input_shape=(5,) , activation='relu' 
 model.add(tf.keras.layers.Dense(units=1 , input_shape=(5,) , activation='relu' , name='init3' ))
 
 # %%
-model.summary()
+print(model.summary())
 
 # %%
-model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),metrics=['mse'])
+model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),metrics=['mape'])
 
 # %%
 info = model.fit(X_train,y_train,epochs=30)
 
 # %%
-info.history['mse']
+#info.history['mse']
 
 # %%
 import numpy as np
 
 # %%
-accu=np.mean(info.history['mse'])
+#accu=np.mean(info.history['mse'])
 # %%
 y_pred = model.predict(X_test)
-
+sop=len(y_pred)
+y_pred=y_pred.reshape(sop)
 # %%
 print(y_pred)
 
 # %
 print(y_test)
+
+accu=y_test-y_pred
+
+accu=accu/y_test
+
+accu=accu*100
+
 #import os
 
 # %%
